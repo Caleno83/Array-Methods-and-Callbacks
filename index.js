@@ -159,13 +159,14 @@ getCountryWins();
 /* Task 8: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
 function getAverageGoals(data) {
-const totalGoals = fifaData["Home Team Goals"].reduce(function (accumularor, data){
+const totalGoals = data.reduce((total, goals) => {
+  return total += goals["Away Team Goals"]
 
-})
+}, 0);
 
 };
 
-getAverageGoals();
+console.log(getAverageGoals(fifaData));
 
 
 /// STRETCH 🥅 //
